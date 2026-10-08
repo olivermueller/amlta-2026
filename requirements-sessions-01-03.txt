@@ -1,0 +1,30 @@
+# Local environment for Sessions 01-03 (students use Google Colab, which preinstalls most of this).
+# Setup (Python 3.12, matching Colab):
+#   uv venv -p 3.12 .venv
+#   uv pip install -r requirements-sessions-01-03.txt
+#   .venv/bin/python -m ipykernel install --user --name amlta-2026 --display-name "Python 3 (amlta-2026)"
+
+# Session 01: classic NLP, word embeddings, MLP/LSTM
+pandas
+numpy
+scikit-learn
+spacy
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+gensim
+plotly
+matplotlib
+tensorflow
+
+# Sessions 02-03: Hugging Face transformers
+torch
+transformers
+datasets>=4
+evaluate>=0.4
+seqeval
+accelerate
+huggingface_hub
+
+# Jupyter
+jupyterlab
+ipykernel
+ipywidgets
