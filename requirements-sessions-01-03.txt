@@ -21,6 +21,7 @@ transformers
 datasets>=4
 evaluate>=0.4
 seqeval
+sentencepiece
 accelerate
 huggingface_hub
 
