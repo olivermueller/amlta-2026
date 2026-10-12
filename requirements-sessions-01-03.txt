@@ -4,7 +4,7 @@
 #   uv pip install -r requirements-sessions-01-03.txt
 #   .venv/bin/python -m ipykernel install --user --name amlta-2026 --display-name "Python 3 (amlta-2026)"
 
-# Session 01: classic NLP, word embeddings, MLP/LSTM
+# Session 01: classic NLP, word embeddings, MLP/LSTM (PyTorch)
 pandas
 numpy
 scikit-learn
@@ -13,10 +13,10 @@ spacy-lookups-data
 gensim
 plotly
 matplotlib
-tensorflow
+torch
+torchinfo
 
 # Sessions 02-03: Hugging Face transformers
-torch
 transformers
 datasets>=4
 evaluate>=0.4
