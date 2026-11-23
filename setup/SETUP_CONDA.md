@@ -9,7 +9,7 @@ You prefer `uv`? Use [SETUP_UV.md](SETUP_UV.md) instead. You only need one of th
 | 1 | Install conda | once |
 | 2 | Get the course repo | once |
 | 3 | Create the environment `amlta-2026` | once |
-| 4 | Create the `.env` file with your API key | once |
+| 4 | Create the `.env` file with your settings | once |
 | 5 | Set up VS Code and select the kernel | once per notebook |
 
 ---
@@ -116,7 +116,7 @@ More commands: [Managing environments](https://docs.conda.io/projects/conda/en/l
 
 ## Step 4: Create the `.env` file
 
-From Session 4 on, the notebooks read your AI-Gateway key from a file called `.env` in the repo folder. How you get the key is explained in `Session_04/4.03`.
+From Session 4 on, `setup_model()` in the notebooks reads its settings from a file called `.env` in the repo folder: where the model runs, keys, addresses, and model names. `.env.example` has one block per provider; the providers are explained in `Session_04/4.03`.
 
 ```bash
 # macOS / Linux
@@ -126,7 +126,7 @@ cp .env.example .env
 copy .env.example .env
 ```
 
-Open `.env` and paste your key behind `AI_GATEWAY_KEY=` (no quotes, no spaces).
+Open `.env` and fill in the block of the provider you use (no quotes, no spaces). Ollama needs no key; download the model once in a terminal: `ollama pull qwen3.5:9b` (or `qwen3.5:4b`, `qwen3.5:2b`). For the university's AI-Gateway, see [SETUP_AI_GATEWAY.md](SETUP_AI_GATEWAY.md).
 
 **Never commit or share `.env`.** It is listed in `.gitignore`, so Git ignores it. Background: [python-dotenv](https://pypi.org/project/python-dotenv/).
 

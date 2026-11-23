@@ -1,0 +1,22 @@
+services:
+  api:
+    build: ./api
+    environment:
+      SANDBOX_KEY: ${SANDBOX_KEY:?set SANDBOX_KEY}
+      RUNNER_IMAGE: course-sandbox-runner:latest
+      MAX_PARALLEL: ${MAX_PARALLEL:-4}
+      SANDBOX_RUNTIME: ${SANDBOX_RUNTIME:-}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock  # to start the sandbox containers on the host
+    expose:
+      - "8000"  # Traefik (Coolify) routes your domain to this port
+    depends_on:
+      - runner
+    restart: unless-stopped
+
+  # Only builds the image for the code; it exits right away. The API starts one container of it per request.
+  runner:
+    build: ./runner
+    image: course-sandbox-runner:latest
+    entrypoint: ["true"]
+    restart: "no"

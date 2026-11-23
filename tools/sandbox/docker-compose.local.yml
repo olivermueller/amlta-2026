@@ -1,0 +1,5 @@
+# For a test on your own computer: docker compose -f docker-compose.yml -f docker-compose.local.yml up --build
+services:
+  api:
+    ports:
+      - "127.0.0.1:8765:8000"
